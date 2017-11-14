@@ -1,0 +1,23 @@
+---
+author:
+- Rohit Goswami
+title: Zen Yoda
+subtitle: Pandoc Pesentations for Turtles
+titlepage-note: |
+  A note for the template.
+#institute: George Mason University
+fontsize: 12pt
+date: 2017-11-5
+subject: "zenYoda"
+tags: [Markdown, Example]
+# HTML Stuff
+revealjs-url: revealJS
+# TeX Stuff
+header-includes:
+    - \numberwithin{figure}{section}
+    - \numberwithin{equation}{section}
+    - \numberwithin{table}{section}
+    - \usepackage{FiraSans}
+# Beamer Stuff
+theme: metropolis
+...
