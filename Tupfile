@@ -37,10 +37,6 @@ paraPres=--standalone -f markdown --highlight-style kate --slide-level 2
 htmlParaPres=--mathjax $(paraPres)
 htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py --filter src/filters/panfHeaderList.py
 
-## TeX
-# : rootConf.yml README.md |> pandoc --pdf-engine=xelatex --from markdown --template eisvogel -N --filter pandoc-eqnos --filter pandoc-fignos -f markdown %f -o %o --highlight-style kate |> src/tex/site.tex
-# : src/tex/site.tex |> latexmk -f %f -r src/tex/.latexmkrc -outdir=doc -silent && latexmk -c %f -r src/tex/.latexmkrc -outdir=doc -silent |> site/%B.pdf
-
 # The presentations
 
 ## HTML
@@ -150,122 +146,115 @@ htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py --filter src/fi
   |> $(beamerOut)/%B.pdf
 
 
-# site
+# SAP
 
 ## html
 
 ### css
-: src/scss/main.scss |> node-sass %f %o |> site/css/zenYoda.css
+: src/scss/main.scss |> node-sass %f %o |> sap/css/zenYoda.css
+: &(paraLibRJS)/revealJS/css/print/paper.css \
+|> shx cp %f %o |> sap/css/print/paper.css
 
 ### JS
-: src/js/sideNav.js |> shx mkdir -p site/js && shx cp %f site/js/main.js |> site/js/main.js
+: src/js/sideNav.js |> shx mkdir -p sap/js && shx cp %f sap/js/main.js |> sap/js/main.js
 
 ### html
 #### Copy Dist
 : foreach $(htmlPresOut)/*.html \
 |> shx cp %f %o \
-|> site/pres/html/%b
+|> sap/pres/html/%b
 
 #### Copy revealJS
 : foreach &(paraLibRJS)/revealJS/css/*.css  \
 |> shx cp %f %o \
-|> site/pres/html/revealJS/css/%b
+|> sap/pres/html/revealJS/css/%b
 
 : foreach &(paraLibRJS)/revealJS/css/theme/*.css  \
 |> shx cp %f %o \
-|> site/pres/html/revealJS/css/theme/%b
+|> sap/pres/html/revealJS/css/theme/%b
 
 : foreach &(paraLibRJS)/revealJS/css/print/*.css  \
 |> shx cp %f %o \
-|> site/pres/html/revealJS/css/print/%b
+|> sap/pres/html/revealJS/css/print/%b
 
 : foreach &(paraLibRJS)/revealJS/js/*  \
 |> shx cp %f %o \
-|> site/pres/html/revealJS/js/%b
+|> sap/pres/html/revealJS/js/%b
 
 : foreach &(paraLibRJS)/revealJS/lib/js/*  \
 |> shx cp %f %o \
-|> site/pres/html/revealJS/lib/js/%b
+|> sap/pres/html/revealJS/lib/js/%b
 
 : foreach &(paraLibRJS)/revealJS/lib/css/*  \
 |> shx cp %f %o \
-|> site/pres/html/revealJS/lib/css/%b
+|> sap/pres/html/revealJS/lib/css/%b
 
 : foreach &(paraLibRJS)/revealJS/lib/font/source-sans-pro/*  \
 |> shx cp %f %o \
-|> site/pres/html/revealJS/lib/font/source-sans-pro/%b
+|> sap/pres/html/revealJS/lib/font/source-sans-pro/%b
 
 : foreach &(paraLibRJS)/revealJS/lib/font/league-gothic/*  \
 |> shx cp %f %o \
-|> site/pres/html/revealJS/lib/font/league-gothic/%b
+|> sap/pres/html/revealJS/lib/font/league-gothic/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/zoom-js/*  \
 |> shx cp %f %o \
-|> site/pres/html/revealJS/plugin/zoom-js/%b
+|> sap/pres/html/revealJS/plugin/zoom-js/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/search/*  \
 |> shx cp %f %o \
-|> site/pres/html/revealJS/plugin/search/%b
+|> sap/pres/html/revealJS/plugin/search/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/print-pdf/*  \
 |> shx cp %f %o \
-|> site/pres/html/revealJS/plugin/print-pdf/%b
+|> sap/pres/html/revealJS/plugin/print-pdf/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/notes-server/*  \
 |> shx cp %f %o \
-|> site/pres/html/revealJS/plugin/notes-server/%b
+|> sap/pres/html/revealJS/plugin/notes-server/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/notes/*  \
 |> shx cp %f %o \
-|> site/pres/html/revealJS/plugin/notes/%b
+|> sap/pres/html/revealJS/plugin/notes/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/math/*  \
 |> shx cp %f %o \
-|> site/pres/html/revealJS/plugin/math/%b
+|> sap/pres/html/revealJS/plugin/math/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/multiplex/*  \
 |> shx cp %f %o \
-|> site/pres/html/revealJS/plugin/multiplex/%b
+|> sap/pres/html/revealJS/plugin/multiplex/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/markdown/*  \
 |> shx cp %f %o \
-|> site/pres/html/revealJS/plugin/markdown/%b
+|> sap/pres/html/revealJS/plugin/markdown/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/highlight/*  \
 |> shx cp %f %o \
-|> site/pres/html/revealJS/plugin/highlight/%b
+|> sap/pres/html/revealJS/plugin/highlight/%b
 
 : foreach $(beamerOut)/*.pdf \
 |> shx cp %f %o \
-|> site/pres/beamer/%b
+|> sap/pres/beamer/%b
 
-#### Make Site
+#### Make SAP
 : src/siteConf.yml src/md/site/site.md \
-| site/css/zenYoda.css site/js/main.js \
+| sap/css/zenYoda.css sap/js/main.js \
 |> pandoc -t html5 $(htmlParaDoc) %f -o %o \
-|> site/index.html
+|> sap/index.html
 
 : foreach src/md/site/*.md \
 |> pandoc -t html5 $(htmlParaDoc) src/siteConf.yml %f -o %o \
-|> site/%B.html
+|> sap/%B.html
 
 : foreach src/img/*.png \
-|> imagemin %f --out-dir=site/img \
-|> site/img/%b
+|> imagemin %f --out-dir=sap/img \
+|> sap/img/%b
 
 : foreach src/img/favicons/*.* \
-|> imagemin %f --out-dir=site/ \
-|> site/%b 
+|> imagemin %f --out-dir=sap/ \
+|> sap/%b 
 
-#### Deploy Site
-# export DEPLOY
-# ifeq (${DEPLOY},y)
-# : site/index.html \
-# | site/pres/html/*.html site/css/*.css site/js/*.js site/pres/beamer/*.pdf \
-# |> surge site zenyoda.surge.sh |>
-# endif
-
-# export FOO
-# ifeq (${FOO},y)
-# : |> echo myFOO=$(FOO) envFOO=${FOO} > %o |> foo.txt
-# endif
+: foreach src/img/previews/*.* \
+|> imagemin %f --out-dir=sap/img/previews/ \
+|> sap/img/previews/%b 

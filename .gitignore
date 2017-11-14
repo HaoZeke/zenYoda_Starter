@@ -226,7 +226,7 @@ src/tex/*.tex
 # temp
 dist/
 docs/
-site/
+sap/
 
 # node
 node_modules/
