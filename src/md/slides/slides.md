@@ -45,7 +45,6 @@ NOTES: This is a note page and you ought to be able to tell.
 
 ## Slide with text and footnote
 
-Trouble with footnotes in HTML
 Surely this is true.^[Jane Doe, *Says It Here* (New York: Oxford 
 University Press, 2050).] 
 
@@ -158,3 +157,16 @@ contents of block 2
 :::
 
 ::::::::::::::
+
+# Photos
+
+## Sea Turtle
+
+This is a sea turtle.
+
+![](img/seaTurtle.jpg "Sea Turtle from Pixabay")
+
+## Citations
+
+This shows how one might cite phony data.
+I cite @wombat2016 and so I must be true.

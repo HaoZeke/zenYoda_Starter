@@ -7,6 +7,8 @@
 This is the template for zenYoda rapid protoyping.
 The template comes with *batteries included* as it includes the dependencies for complete offline use. 
 
+Both pandoc style citations and traditional TeX citations are enabled, however keep in mind that TeX citations will not display in non-TeX files.
+
 Read about the project at it's source [here](https://www.github.com/HaoZeke/zenYoda) or on the documentation site [here](https://zenyoda.surge.sh)
 
 ## Usage
@@ -52,7 +54,7 @@ For automatic reloading, get [browsersync](https://browsersync.io) and run the f
 # Get browsersync
 yarn global add browser-sync
 # Get live reloading
-browser-sync start -s 'site' -f 'site'
+browser-sync start -s 'sap' -f 'sap'
 ```
 
 The output is basically a SAP whoich may be deployed to Travis for posterity. (check the [project docs](https://zenyoda.surge.sh))
