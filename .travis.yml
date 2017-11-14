@@ -34,6 +34,7 @@ script:
 
 deploy:
   - provider: surge
+    skip_cleanup: true
     project: ./sap/
     domain: $SURGE_DOMAIN
   - provider: pages
