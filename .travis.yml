@@ -39,7 +39,7 @@ script:
 deploy:
   - provider: surge
     project: ./docs/
-    domain: zenyodasap.surge.sh
+    domain: $SURGE_DOMAIN
   - provider: site
     local_dir: ./site
     skip_cleanup: true
