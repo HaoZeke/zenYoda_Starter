@@ -11,6 +11,30 @@ Read about the project at it's source [here](https://www.github.com/HaoZeke/zenY
 
 ## Usage
 
+### PaaS
+Simply fork the repo.
+
+
+Edit the slides.md file in src/md/slides/ and also slideConf.yml in src/ using any of the following:
+
+- Github Native Editor
+- [StackEdit](https://stackedit.io)
+- [Dillinger](https://dillinger.io)
+- [Prose.io](http://prose.io)
+
+You may use any of the pandoc markdown syntax, even if the viewers above do not support the entire syntax
+
+
+You'll need to edit the [Travis CI Settings](https://travis-ci.org/) for the repo as shown below:
+
+![](readme/travisVar.png "Variables to be set")
+
+- The first build WILL TAKE around ~20 minutes.
+- Subsequent builds will only take around ~10 minutes or less.
+- It's best to setup the CI immediately on forking the repository, then start working.
+
+### Local
+
 Simply clone the repo and start changing slideConf.yml and slides.md
 
 You can enable file watching by:
