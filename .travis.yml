@@ -32,16 +32,12 @@ install:
 script:
   - tup
 
-# # Since Travis has trouble with multiple deployments
-# after_success:
-#   - surge site zenyodasap.surge.sh
-
 deploy:
   - provider: surge
-    project: ./docs/
+    project: ./sap/
     domain: $SURGE_DOMAIN
-  - provider: site
-    local_dir: ./site
+  - provider: pages
+    local_dir: ./sap
     skip_cleanup: true
     github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
     on:
