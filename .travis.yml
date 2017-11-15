@@ -3,10 +3,13 @@ dist: trusty
 language: shell
 # Attempt to cache TeX
 cache:
+  edge: true
+  yarn: true
+  pip: true
   directories:
-    - /tmp/texlive
-    - $HOME/.texlive
-    - $HOME/save
+   - /tmp/texlive
+   - $HOME/.texlive
+   - $HOME/save
 
 before_install:
   - sudo apt-add-repository 'deb http://ppa.launchpad.net/anatol/tup/ubuntu precise main'
