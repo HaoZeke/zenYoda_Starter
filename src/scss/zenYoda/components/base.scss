@@ -206,3 +206,12 @@ code.hasJax {
     background: none;
   }
 }
+
+.github-corner {
+    grid-column: 3;
+    position: sticky;
+    top: 0;
+    background: none;
+    width: 0;
+    justify-self: end;
+}
