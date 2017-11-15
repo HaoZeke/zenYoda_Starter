@@ -1,7 +1,7 @@
 cd $HOME/save
 
-sudo wget -nc "http://www.carrois.com/downloads/fira_4_1/FiraFonts4106.zip"
-sudo wget -nc "http://www.carrois.com/downloads/fira_mono_3_2/FiraMonoFonts3206.zip"
+sudo aria2c --continue=true "http://www.carrois.com/downloads/fira_4_1/FiraFonts4106.zip"
+sudo aria2c --continue=true "http://www.carrois.com/downloads/fira_mono_3_2/FiraMonoFonts3206.zip"
 
 sudo unzip FiraFonts4106.zip
 sudo unzip FiraMonoFonts3206.zip
