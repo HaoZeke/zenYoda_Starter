@@ -3,8 +3,8 @@ cd $HOME/save
 sudo aria2c --continue=true "http://www.carrois.com/downloads/fira_4_1/FiraFonts4106.zip"
 sudo aria2c --continue=true "http://www.carrois.com/downloads/fira_mono_3_2/FiraMonoFonts3206.zip"
 
-sudo unzip FiraFonts4106.zip
-sudo unzip FiraMonoFonts3206.zip
+sudo unzip -n FiraFonts4106.zip
+sudo unzip -n FiraMonoFonts3206.zip
 
 sudo mkdir -p /usr/share/fonts/truetype/Fira
 sudo mkdir -p /usr/share/fonts/opentype/Fira
