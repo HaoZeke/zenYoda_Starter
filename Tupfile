@@ -180,8 +180,6 @@ htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py --filter src/fi
 
 ### JS
 : src/js/sideNav.js |> shx mkdir -p sap/js && shx cp %f sap/js/main.js |> sap/js/main.js
-: src/js/gAnalytics.js |> shx cp %f %o |> sap/js/%b
-: src/js/gAnalytics.js |> shx cp %f %o |> sap/pres/html/js/%b
 
 #### Make SAP
 : src/siteConf.yml src/md/site/site.md \
