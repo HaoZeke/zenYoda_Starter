@@ -175,6 +175,7 @@ htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py --filter src/fi
 
 ### css
 : src/scss/main.scss |> node-sass %f %o |> sap/css/zenYoda.css
+: src/scss/overrides.scss |> node-sass %f %o |> sap/pres/html/css/rjsOverrides.css
 # : &(paraLibRJS)/revealJS/css/print/paper.css \
 |> shx cp %f %o |> sap/css/print/paper.css
 

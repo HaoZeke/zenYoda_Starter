@@ -14,6 +14,7 @@ tags: [Markdown, Example]
 bibliography: "src/refs.bib"
 # HTML Stuff
 revealjs-url: revealJS
+css: css/rjsOverrides.css
 # TeX Stuff
 header-includes:
     - \numberwithin{figure}{section}
