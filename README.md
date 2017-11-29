@@ -2,14 +2,16 @@
 
 > Copyright (C) 2017  Rohit Goswami <rohit1995@mail.ru>
 
-![](src/img/turtle.png "Pandoc for turtles")
+![](src/img/turtle.png "Pandoc Presentations for turtles")
 
-This is the template for zenYoda rapid protoyping.
+This is the template for zenYoda rapid protoyping for presentations.
 The template comes with *batteries included* as it includes the dependencies for complete offline use. 
 
 Both pandoc style citations and traditional TeX citations are enabled, however keep in mind that TeX citations will not display in non-TeX files.
 
 Read about the project at it's source [here](https://www.github.com/HaoZeke/zenYoda) or on the documentation site [here](https://zenyoda.surge.sh)
+
+For creating academic documents, refer to the sibling project, [docuYoda](http://docuyoda.surge.sh/) and it's [starter template](http://docuyodasap.surge.sh/).
 
 ## Usage
 

@@ -5,7 +5,7 @@ $include src/md/site/partials/head.md
 :::: {.gridHead .headContent}
 # zenYoda Starter
 :::: {.subHead}
-### Pandoc For Turtles
+### Pandoc Presentations For Turtles
 ::::
 ::::
 
