@@ -63,10 +63,8 @@ For automatic reloading, get [browsersync](https://browsersync.io) and run the
 following in another terminal:
 
 ```bash
-# Get browsersync
-yarn global add browser-sync
 # Get live reloading
-browser-sync start -s 'sap' -f 'sap'
+yarn browser-sync start -s 'sap' -f 'sap'
 ```
 
 The output is basically a SAP whoich may be deployed to Travis for posterity.
