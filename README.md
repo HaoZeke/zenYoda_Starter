@@ -1,17 +1,23 @@
-# Zen Yoda Starter Kit [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=for-the-badge)](https://www.paypal.me/HaoZeke/) [![Build Status](https://travis-ci.org/HaoZeke/zenYoda.svg?branch=master)](https://travis-ci.org/HaoZeke/zenYoda_Starter)  
+# Zen Yoda Starter Kit [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=for-the-badge)](https://www.paypal.me/HaoZeke/) [![Build Status](https://travis-ci.org/HaoZeke/zenYoda.svg?branch=master)](https://travis-ci.org/HaoZeke/zenYoda_Starter)
 
 > Copyright (C) 2017  Rohit Goswami <rohit1995@mail.ru>
 
 ![](src/img/turtle.png "Pandoc Presentations for turtles")
 
-This is the template for zenYoda rapid protoyping for presentations.
-The template comes with *batteries included* as it includes the dependencies for complete offline use. 
+This is the template for zenYoda rapid protoyping for presentations. The
+template comes with *batteries included* as it includes the dependencies for
+complete offline use.
 
-Both pandoc style citations and traditional TeX citations are enabled, however keep in mind that TeX citations will not display in non-TeX files.
+Both pandoc style citations and traditional TeX citations are enabled, however
+keep in mind that TeX citations will not display in non-TeX files.
 
-Read about the project at it's source [here](https://www.github.com/HaoZeke/zenYoda) or on the documentation site [here](https://zenyoda.surge.sh)
+Read about the project at it's source
+[here](https://www.github.com/HaoZeke/zenYoda) or on the documentation site
+[here](https://zenyoda.surge.sh)
 
-For creating academic documents, refer to the sibling project, [docuYoda](http://docuyoda.surge.sh/) and it's [starter template](http://docuyodasap.surge.sh/).
+For creating academic documents, refer to the sibling project,
+[docuYoda](http://docuyoda.surge.sh/) and it's [starter
+template](http://docuyodasap.surge.sh/).
 
 ## Usage
 
@@ -19,17 +25,20 @@ For creating academic documents, refer to the sibling project, [docuYoda](http:/
 Simply fork the repo.
 
 
-Edit the slides.md file in src/md/slides/ and also slideConf.yml in src/ using any of the following:
+Edit the slides.md file in src/md/slides/ and also slideConf.yml in src/ using
+any of the following:
 
 - Github Native Editor
 - [StackEdit](https://stackedit.io)
 - [Dillinger](https://dillinger.io)
 - [Prose.io](http://prose.io)
 
-You may use any of the pandoc markdown syntax, even if the viewers above do not support the entire syntax
+You may use any of the pandoc markdown syntax, even if the viewers above do not
+support the entire syntax
 
 
-You'll need to edit the [Travis CI Settings](https://travis-ci.org/) for the repo as shown below:
+You'll need to edit the [Travis CI Settings](https://travis-ci.org/) for the
+repo as shown below:
 
 ![](readme/travisVar.png "Variables to be set")
 
@@ -50,7 +59,8 @@ tup monitor -a
 tup stop
 ```
 
-For automatic reloading, get [browsersync](https://browsersync.io) and run the following in another terminal:
+For automatic reloading, get [browsersync](https://browsersync.io) and run the
+following in another terminal:
 
 ```bash
 # Get browsersync
@@ -59,7 +69,8 @@ yarn global add browser-sync
 browser-sync start -s 'sap' -f 'sap'
 ```
 
-The output is basically a SAP whoich may be deployed to Travis for posterity. (check the [project docs](https://zenyoda.surge.sh))
+The output is basically a SAP whoich may be deployed to Travis for posterity.
+(check the [project docs](https://zenyoda.surge.sh))
 
 Point your browser to [the application](localhost:3000).
 
