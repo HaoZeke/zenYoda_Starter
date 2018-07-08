@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "browser-sync": "^2.24.5",
     "imagemin": "^5.3.1",
     "imagemin-cli": "^3.0.0",
     "node-sass": "^4.9.2",
