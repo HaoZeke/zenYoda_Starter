@@ -40,23 +40,23 @@ htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py --filter src/fi
 # Images
 
 : foreach src/img/pres/*.* \
-|> imagemin %f --out-dir=$(beamerOut)/img/ \
+|> yarn imagemin %f --out-dir=$(beamerOut)/img/ \
 |> $(beamerOut)/img/%b 
 
 : foreach src/img/pres/*.* \
-|> imagemin %f --out-dir=$(htmlPresOut)/img/ \
+|> yarn imagemin %f --out-dir=$(htmlPresOut)/img/ \
 |> $(htmlPresOut)/img/%b 
 
 : foreach src/img/*.png \
-|> imagemin %f --out-dir=sap/img \
+|> yarn imagemin %f --out-dir=sap/img \
 |> sap/img/%b
 
 : foreach src/img/favicons/*.* \
-|> imagemin %f --out-dir=sap/ \
+|> yarn imagemin %f --out-dir=sap/ \
 |> sap/%b 
 
 : foreach src/img/previews/*.* \
-|> imagemin %f --out-dir=sap/img/previews/ \
+|> yarn imagemin %f --out-dir=sap/img/previews/ \
 |> sap/img/previews/%b 
 
 
@@ -64,71 +64,71 @@ htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py --filter src/fi
 
 ### RevealJS Libraries
 : foreach &(paraLibRJS)/revealJS/css/*.css  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> $(htmlPresOut)/revealJS/css/%b
 
 : foreach &(paraLibRJS)/revealJS/css/theme/*.css  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> $(htmlPresOut)/revealJS/css/theme/%b
 
 : foreach &(paraLibRJS)/revealJS/css/print/*.css  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> $(htmlPresOut)/revealJS/css/print/%b
 
 : foreach &(paraLibRJS)/revealJS/js/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> $(htmlPresOut)/revealJS/js/%b
 
 : foreach &(paraLibRJS)/revealJS/lib/js/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> $(htmlPresOut)/revealJS/lib/js/%b
 
 : foreach &(paraLibRJS)/revealJS/lib/css/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> $(htmlPresOut)/revealJS/lib/css/%b
 
 : foreach &(paraLibRJS)/revealJS/lib/font/source-sans-pro/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> $(htmlPresOut)/revealJS/lib/font/source-sans-pro/%b
 
 : foreach &(paraLibRJS)/revealJS/lib/font/league-gothic/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> $(htmlPresOut)/revealJS/lib/font/league-gothic/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/zoom-js/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> $(htmlPresOut)/revealJS/plugin/zoom-js/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/search/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> $(htmlPresOut)/revealJS/plugin/search/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/print-pdf/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> $(htmlPresOut)/revealJS/plugin/print-pdf/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/notes-server/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> $(htmlPresOut)/revealJS/plugin/notes-server/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/notes/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> $(htmlPresOut)/revealJS/plugin/notes/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/math/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> $(htmlPresOut)/revealJS/plugin/math/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/multiplex/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> $(htmlPresOut)/revealJS/plugin/multiplex/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/markdown/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> $(htmlPresOut)/revealJS/plugin/markdown/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/highlight/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> $(htmlPresOut)/revealJS/plugin/highlight/%b
 
 ### RevealJS Presentation
@@ -177,12 +177,12 @@ htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py --filter src/fi
 : src/scss/main.scss |> node-sass %f %o |> sap/css/zenYoda.css
 : src/scss/overrides.scss |> node-sass %f %o |> sap/pres/html/css/rjsOverrides.css
 # : &(paraLibRJS)/revealJS/css/print/paper.css \
-|> shx cp %f %o |> sap/css/print/paper.css
+|> yarn shx cp %f %o |> sap/css/print/paper.css
 
 ### JS
-: src/js/sideNav.js |> shx mkdir -p sap/js && shx cp %f sap/js/main.js |> sap/js/main.js
-: src/js/gAnalyticsHive.js |> shx cp %f %o |> sap/js/%b
-: src/js/gAnalyticsHive.js |> shx cp %f %o |> sap/pres/html/js/%b
+: src/js/sideNav.js |> yarn shx mkdir -p sap/js && yarn shx cp %f sap/js/main.js |> sap/js/main.js
+: src/js/gAnalyticsHive.js |> yarn shx cp %f %o |> sap/js/%b
+: src/js/gAnalyticsHive.js |> yarn shx cp %f %o |> sap/pres/html/js/%b
 
 #### Make SAP
 : src/siteConf.yml src/md/site/site.md \
