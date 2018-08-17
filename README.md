@@ -24,7 +24,6 @@ template](http://docuyodasap.surge.sh/).
 ### PaaS
 Simply fork the repo.
 
-
 Edit the slides.md file in src/md/slides/ and also slideConf.yml in src/ using
 any of the following:
 
@@ -100,6 +99,12 @@ The output is basically a SAP whoich may be deployed to Travis for posterity.
 Point your browser to [the application](localhost:3000).
 
 For using Travis, change the site name in Travis. (more in the docs)
+
+#### Customizations
+
+Apart from the `yaml` file switches, custom `js` for
+[revealjs](https://github.com/hakimel/reveal.js#configuration) may be added to
+`src/js/rjsConf.js`. Also, custom `scss` rules for the same are to be put in `src/scss/rjsOverrides`.
 
 ## Acknowledgments
 This software is built on the following:
