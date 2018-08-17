@@ -183,6 +183,7 @@ htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py --filter src/fi
 : src/js/sideNav.js |> yarn shx mkdir -p sap/js && yarn shx cp %f sap/js/main.js |> sap/js/main.js
 : src/js/gAnalyticsHive.js |> yarn shx cp %f %o |> sap/js/%b
 : src/js/gAnalyticsHive.js |> yarn shx cp %f %o |> sap/pres/html/js/%b
+: src/js/rjsConf.js |> yarn shx cp %f %o |> sap/pres/html/js/%b
 
 #### Make SAP
 : src/siteConf.yml src/md/site/site.md \
