@@ -33,7 +33,7 @@ texOut=src/tex
 &paraLibRJS=src/presFrameworks
 
 # Common Parameters
-paraPres=--standalone -f markdown --highlight-style kate --slide-level 2 --filter pandoc-citeproc 
+paraPres=--standalone -f markdown --highlight-style kate --slide-level 2 --filter pandoc-citeproc --filter pandoc-fignos --filter pandoc-eqnos --filter pandoc-tablenos
 htmlParaPres=--mathjax $(paraPres)
 htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py --filter src/filters/panfHeaderList.py
 
