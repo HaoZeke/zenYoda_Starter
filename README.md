@@ -90,7 +90,7 @@ following in another terminal:
 
 ```bash
 # Get live reloading
-yarn browser-sync start -s 'sap' -f 'sap'
+yarn browser-sync sap -w --watchEvents add
 ```
 
 The output is basically a SAP whoich may be deployed to Travis for posterity.
