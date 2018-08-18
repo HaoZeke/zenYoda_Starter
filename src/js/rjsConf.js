@@ -128,6 +128,26 @@ Reveal.configure({
 	parallaxBackgroundVertical: null,
 
 	// The display mode that will be used to show slides
-	display: 'block'
+	display: 'block',
+	
+	// The "normal" size of the presentation, aspect ratio will be preserved
+	// when the presentation is scaled to fit different resolutions. Can be
+	// specified using percentage units.
+	width: 960,
+	height: 700,
+
+	// Factor of the display size that should remain empty around the content
+	margin: 0.1,
+
+	// Bounds for smallest/largest possible scale to apply to content
+	minScale: 0.2,
+	maxScale: 1.5,
+	
+	// Disable regular scaling and use media queries
+	// width: "100%",
+	// height: "100%",
+	// margin: 0,
+	// minScale: 1,
+	// maxScale: 1
 
 });
