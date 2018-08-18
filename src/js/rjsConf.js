@@ -26,7 +26,13 @@ Reveal.configure({
 	progress: true,
 
 	// Display the page number of the current slide
-	slideNumber: true,
+	// Slide number formatting can be configured using these variables:
+	//  "h.v": horizontal . vertical slide number (default)
+	//  "h/v": horizontal / vertical slide number
+	//    "c": flattened slide number
+	//  "c/t": flattened slide number / total slides
+	//  true: Set to default
+	slideNumber: 'c/t',
 
 	// Push each slide change to the browser history
 	history: false,
